@@ -1,0 +1,5 @@
+provider: github
+owner: NJUPT-B22042133
+repo: mymusic
+vPrefixedTagName: true
+private: false
