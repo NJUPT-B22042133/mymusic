@@ -1,6 +1,6 @@
 {
   "name": "mymusic",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "本地音乐播放器 - Electron应用",
   "main": "main.js",
   "scripts": {
@@ -8,9 +8,15 @@
     "dev": "electron . --dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "build": "electron-builder"
   },
-  "keywords": ["music", "player", "electron", "audio"],
+  "keywords": [
+    "music",
+    "player",
+    "electron",
+    "audio"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
@@ -19,6 +25,8 @@
     "electron-builder": "^26.0.12"
   },
   "dependencies": {
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.6.2",
     "music-metadata": "^10.0.0",
     "node-id3": "^0.2.6"
   },
@@ -26,14 +34,25 @@
     "appId": "com.ividernvi.mymusic",
     "productName": "MyMusic",
     "linux": {
-      "target": ["AppImage"],       
-      "category": "AudioVideo"       
+      "target": [
+        "AppImage"
+      ],
+      "category": "AudioVideo"
     },
     "mac": {
-      "target": "dmg"
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.music"
     },
     "win": {
       "target": "nsis"
     }
+  },
+  "publish": {
+    "provider": "github",
+    "owner": "IViDerNvI",
+    "repo": "mymusic"
   }
 }

@@ -1,0 +1,5 @@
+provider: github
+owner: ividernvi
+repo: mymusic
+vPrefixedTagName: true
+private: false
